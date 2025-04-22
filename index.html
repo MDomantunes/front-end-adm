@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Controle de Catraca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Painel do Administrador</h1>
+
+        <!-- Cadastro de Aluno -->
+        <h2>Cadastrar Novo Aluno</h2>
+        <input type="text" id="cpf" placeholder="CPF">
+        <input type="text" id="nome" placeholder="Nome">
+        <select id="status">
+            <option value="ativo">Ativo</option>
+            <option value="inativo">Inativo</option>
+        </select>
+        <button onclick="cadastrarAluno()">Cadastrar</button>
+
+        <!-- Listagem de Alunos -->
+        <h2>Alunos Cadastrados</h2>
+        <button onclick="listarAlunos()">Listar Todos</button>
+        <ul id="listaAlunos"></ul>
+
+        <!-- Edição e Exclusão -->
+        <h2>Editar / Excluir Aluno</h2>
+        <input type="text" id="cpfBusca" placeholder="Digite o CPF para buscar">
+        <button onclick="buscarAluno()">Buscar</button>
+        <div id="editarAluno" style="display: none;">
+            <input type="text" id="nomeEditar" placeholder="Novo Nome">
+            <select id="statusEditar">
+                <option value="ativo">Ativo</option>
+                <option value="inativo">Inativo</option>
+            </select>
+            <button onclick="editarAluno()">Salvar Alterações</button>
+            <button onclick="excluirAluno()">Excluir Aluno</button>
+        </div>
+
+        <div id="mensagem" class="mensagem"></div>
+
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 Titan GYM. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
