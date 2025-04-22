@@ -9,50 +9,52 @@ body {
   background-attachment: fixed;
   background-position: center;
   color: #ffffff;
-  min-height: 100vh;
+  height: 100vh; /* Garantir que o body ocupe toda a altura da tela */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
 }
 
 .container {
-  background-color: #1c1c1c; /* Fundo escuro sólido */
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com transparência */
   padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   text-align: center;
-  margin: 40px auto;
-  color: #ffffff;
+  width: 100%; /* O container ocupa 100% da largura disponível */
+  max-width: 700px; /* Limita a largura máxima do container */
+  box-sizing: border-box; /* Garante que o padding seja considerado no cálculo da largura */
 }
 
-h1, h2 {
-  color: #ffffff;
+h1 {
   margin-bottom: 20px;
 }
 
 h2 {
+  margin-top: 30px;
   text-align: left;
   border-bottom: 1px solid #444;
   padding-bottom: 5px;
-  margin-top: 30px;
 }
 
-input,
-select {
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+input[type="text"], select {
   width: 100%;
-  max-width: 400px;
   padding: 12px;
-  border-radius: 4px;
-  border: 1px solid #666;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
   background-color: #f9f9f9;
   color: #333;
-  font-size: 16px;
-  margin: 0 auto 15px auto;
-  display: block;
-  outline: none;
+  text-align: center;
 }
 
 button {
@@ -60,14 +62,14 @@ button {
   color: #fff;
   border: none;
   padding: 12px 20px;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin: 10px auto;
   transition: background-color 0.3s ease;
+  margin: 10px 0;
   max-width: 200px;
-  display: block;
+  width: 100%; /* O botão ocupa toda a largura possível */
 }
 
 button:hover {
@@ -114,22 +116,13 @@ button:hover {
   border: 1px solid #f5c6cb;
 }
 
-.mensagem .icone {
-  margin-right: 10px;
-  font-size: 20px;
-}
-
-.mensagem .texto {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 #listaAlunos {
   list-style: none;
   padding: 0;
   margin-top: 15px;
   text-align: left;
   max-width: 400px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   color: #fff;
@@ -143,12 +136,6 @@ button:hover {
   border: 1px solid #444;
 }
 
-#editarAluno {
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #444;
-}
-
 .footer {
   background-color: #000;
   color: #fff;
@@ -157,95 +144,22 @@ button:hover {
   width: 100%;
   margin-top: auto;
 }
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('fundo.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  color: #fff;
-  height: 100vh;
+.form-group {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: center; /* Isso centraliza os inputs */
   justify-content: center;
+  width: 100%;
 }
-
-.container {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  text-align: center;
+input,
+select {
+  width: 100%;
   max-width: 400px;
-  width: 100%;
-}
-
-h1 {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #fff;
-}
-
-input[type="text"] {
-  width: 100%;
   padding: 12px;
-  font-size: 18px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #666;
   background-color: #f9f9f9;
   color: #333;
-}
-
-.keypad {
-  display: grid;
-  grid-template-columns: repeat(3, 80px);
-  gap: 10px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.key {
-  padding: 20px;
-  font-size: 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.key:hover {
-  background-color: #555;
-}
-
-.btn-liberar {
-  margin-top: 30px;
-  padding: 15px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #0288d1;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-liberar:hover {
-  background-color: #0277bd;
-}
-
-#resultado {
-  margin-top: 15px;
   font-size: 16px;
+  margin: 0 0 15px 0;
 }
